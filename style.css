@@ -109,3 +109,36 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* 📱 Responsive design for mobile screens */
+@media (max-width: 768px) {
+  body {
+    background-size: 600% 600%; /* smoother gradient motion */
+    animation: liquidFlow 10s ease-in-out infinite;
+  }
+
+  h1 {
+    font-size: 2rem;  /* smaller but still bold on mobile */
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .fish {
+    transform: scale(0.7);  /* smaller fish */
+  }
+
+  .image-box {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* 🪩 Make sure image boxes fit nicely on mobile corners */
+.image-box {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #ff69b4;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px #ff69b4;
+}
