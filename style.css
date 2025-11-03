@@ -73,3 +73,14 @@ body {
 body {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='40' width='40'><text y='32' font-size='32'>🧜‍♀️</text></svg>"), auto;
 }
+body.blue-liquid {
+  background: linear-gradient(135deg, #001144, #00bfff, #001144);
+  background-size: 400% 400%;
+  animation: quickLiquid 3s ease infinite;
+}
+
+@keyframes quickLiquid {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
