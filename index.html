@@ -22,5 +22,24 @@
   <div id="instruments">🎷 🎹 🥁 🎸 🎤</div>
 
   <script src="script.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".fish").forEach(fish => {
+    fish.addEventListener("click", e => {
+      e.preventDefault();
+      const target = e.target.getAttribute("href");
+      fetch(target)
+        .then(res => {
+          if (res.ok) {
+            window.location.href = target;
+          } else {
+            alert("Page not found yet! Please make sure all 7 pages exist (page1.html - page7.html).");
+          }
+        })
+        .catch(() => alert("That page isn't uploaded yet!"));
+    });
+  });
+});
+</script>
 </body>
 </html>
