@@ -19,10 +19,12 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-}
-/* Title perfectly centered */
+
+/* ------------------------
+   Title
+------------------------ */
 h1.title {
-  position: fixed; /* use fixed to center relative to viewport */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -34,9 +36,11 @@ h1.title {
   z-index: 10;
 }
 
-/* Fish orbit container stays centered on title */
+/* ------------------------
+   Fish Orbit
+------------------------ */
 .fish-container {
-  position: fixed; /* fixed relative to viewport */
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 400px;
@@ -51,7 +55,13 @@ h1.title {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Fish positions around the circle */
+.fish {
+  position: absolute;
+  font-size: 60px;
+  text-decoration: none;
+  transform-origin: center center;
+}
+
 .fish:nth-child(1) { transform: rotate(0deg) translate(200px) rotate(0deg); }
 .fish:nth-child(2) { transform: rotate(51.4deg) translate(200px) rotate(-51.4deg); }
 .fish:nth-child(3) { transform: rotate(102.8deg) translate(200px) rotate(-102.8deg); }
@@ -64,7 +74,64 @@ h1.title {
   transform: scale(1.3) rotate(0deg);
 }
 
-/* Mobile adjustments */
+/* ------------------------
+   Instruments Line
+------------------------ */
+.instrument-line {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+}
+
+/* ------------------------
+   Corner Image Boxes
+------------------------ */
+.corner-box {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  border: 2px solid #ff66cc;
+  box-shadow: 0 0 15px #ff6699;
+  overflow: hidden;
+  animation: pulseBox 4s ease-in-out infinite alternate;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes pulseBox {
+  from { transform: scale(1); box-shadow: 0 0 10px #ff6699; }
+  to { transform: scale(1.05); box-shadow: 0 0 25px #ff33aa; }
+}
+
+.corner-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.corner-tl { top: 20px; left: 20px; }
+.corner-tr { top: 20px; right: 20px; }
+.corner-bl { bottom: 20px; left: 20px; }
+.corner-br { bottom: 20px; right: 20px; }
+
+/* ------------------------
+   Mermaid Cursor
+------------------------ */
+#cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  font-size: 40px;
+  z-index: 100;
+}
+
+/* ------------------------
+   Mobile / Responsive
+------------------------ */
 @media (max-width: 768px) {
   h1.title {
     font-size: 2.5rem;
@@ -82,7 +149,11 @@ h1.title {
     font-size: 36px;
   }
 
-  /* Move corner boxes far enough not to cover title */
+  .corner-box {
+    width: 60px;
+    height: 60px;
+  }
+
   .corner-tl { top: 5%; left: 5%; }
   .corner-tr { top: 5%; right: 5%; }
   .corner-bl { bottom: 5%; left: 5%; }
