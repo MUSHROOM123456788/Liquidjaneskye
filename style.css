@@ -69,3 +69,7 @@ body {
   font-size: 2em;
   color: white;
 }
+/* Mermaid emoji cursor */
+body {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='40' width='40'><text y='32' font-size='32'>🧜‍♀️</text></svg>"), auto;
+}
