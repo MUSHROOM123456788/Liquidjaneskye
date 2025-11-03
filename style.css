@@ -84,3 +84,13 @@ body.blue-liquid {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.title-link {
+  text-decoration: none;
+  color: #ffa64d;
+  font-family: 'Impact', sans-serif;
+  font-size: 48px;
+  text-shadow: 2px 2px 0 red;
+}
+.title-link:hover {
+  color: #ffb366;
+}
